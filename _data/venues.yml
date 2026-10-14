@@ -1,0 +1,16 @@
+# Venue badges. The BibTeX field `abbr` of a paper is looked up here to colour (and optionally link) the badge shown beside it.
+# Format:
+#
+# "ABBR":
+#   url: https://link-to-the-venue # optional
+#   color: "#rrggbb" # optional
+#
+# Abbreviations come from _materials/03_publications/publication_notes.md. Colours are a design choice (template palette).
+"OLT": # Optics & Laser Technology
+  color: "#00369f"
+
+"OLE": # Optics and Lasers in Engineering
+  color: "#009f36"
+
+"MST": # Measurement Science and Technology
+  color: "#b71c1c"

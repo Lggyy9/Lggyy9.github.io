@@ -1,0 +1,106 @@
+# CV data in RenderCV format; rendered by _pages/cv.md (layout: cv). This file is the source of the CV page; the owner's CV.md and the CV.pdf download follow it.
+# 2026-10-14: unified with the project pages (the owner's latest project summaries win): titles, project types and dates are those of the project pages, and the
+# bullets follow them. The thesis project shows only its basic info (title, type, dates), like its project page.
+# Fixes approved by the owner: "RMSby" -> "RMS by", a missing comma after "Lab-Initiated Research Project", and "M.Eng" -> "M.Eng.".
+# Notes on the template: the card titles "Contact Information", "Professional Summary", "Experience" and "Languages" are fixed by the
+# template, and the Experience card always comes first and is sorted by end date (newest first).
+# The web page tolerates missing dates; before the render-cv GitHub workflow (PDF generation) is ever enabled,
+# every entry needs valid dates and a valid phone number because RenderCV validates them.
+cv:
+  name: Guoyuan Lyu
+  email: lggyy@tju.edu.cn
+  phone: Available upon request
+  address:
+    city: Tianjin
+    region: China
+  # "Research Interests" in CV.md; shown under the template's fixed title "Professional Summary".
+  summary: "My previous work has focused on measurement-driven error diagnosis and closed-loop compensation in ultraprecision optical manufacturing. I aim to generalize this framework to advanced manufacturing and intelligent inspection by integrating in-situ metrology, physical process modeling, adaptive control, and agent-enabled engineering automation."
+
+  sections:
+    Education:
+      - institution: Tianjin University
+        area: Instrument Science and Technology
+        studyType: M.Eng.
+        location: Tianjin, China
+        start_date: 2025-09
+        highlights:
+          - "Expected Graduation: Jun. 2028"
+          - "Recommended for graduate admission"
+          - "Advisor: Prof. Xiaodong Zhang"
+
+      - institution: Tianjin University
+        area: Measurement and Control Technology and Instruments
+        studyType: B.Eng.
+        location: Tianjin, China
+        start_date: 2021-09
+        end_date: 2025-06
+        highlights:
+          - "GPA: 3.73 / 4.0"
+
+    Experience:
+      - position: "High-Uniformity Ultra-Precision Diamond Turning of Single-Crystal Germanium Microlens Arrays"
+        company: "Master’s Thesis project | Government-Funded Research Project, Sep. 2025 – Present"
+        start_date: 2025-09
+
+      - position: "Development of a Coherence Scanning Interferometry Probe for Optical Profilometry"
+        company: "Industry-Sponsored Project, Nov. 2024 – Nov. 2025"
+        start_date: 2024-11
+        end_date: 2025-11
+        highlights:
+          - "Developed dynamic-link libraries for instrument control and software integration, including image acquisition, scanning control, topography reconstruction, data reprocessing, and surface-roughness evaluation."
+          - "Integrated the algorithmic and software components with the probe hardware and carried out hands-on testing, contributing to the successful delivery of a functional CSI probe for an optical profilometer."
+          - "Participated in the component selection of a compact CSI probe integrating broadband illumination, piezoelectric vertical scanning, an interferometric objective, and industrial-camera acquisition, building on the laboratory's earlier hardware development."
+          - "Independently designed and conducted exploratory microsphere-assisted CSI experiments for enhanced lateral-resolution measurement and identified limitations in microsphere manipulation, experimental stability, and forward-model validation."
+
+      - position: "A closed-loop compensatory manufacturing process for monolithic multi-mirror systems guided by optical performance"
+        company: "Lab-Initiated Research Project, Dec. 2025 – Aug. 2026"
+        start_date: 2025-12
+        end_date: 2026-08
+        highlights:
+          - "Led the experimental implementation and metrology of a closed-loop compensation process for a monolithic dual-reflector optical system manufactured by single-point diamond turning."
+          - "Developed and executed a Zemax ZOS-API workflow to simulate the propagation of measured surface errors and evaluate candidate compensation strategies in terms of system-level optical performance."
+          - "Processed and analyzed machining, surface-metrology, and optical-performance data to evaluate the effectiveness of the compensation method. Reduced the system wavefront error RMS by 90% after compensation iteration, experimentally validating the effectiveness of the optical-performance-guided compensation framework."
+          - "Consolidated the simulation and experimental results and led the preparation of the resulting co-first-author manuscript."
+
+      - position: "Compensation Single-Point Diamond Turning of Large Aperture Biconic Optical Surfaces"
+        company: "Industry-Facing Engineering Project, Apr. 2026 – Jul. 2026"
+        start_date: 2026-04
+        end_date: 2026-07
+        highlights:
+          - "Led the diagnosis of systematic surface-form errors in the production machining of biconic optical components and established corresponding compensation strategies."
+          - "Developed feature-specific surface-error fitting algorithms for different error morphologies, enabling accurate representation of measured form errors with low fitting residuals."
+          - "Generated compensated tool paths for biconic surfaces with varying design parameters and supported their implementation in ultra-precision diamond-turning production."
+          - "Developed the core dynamic-link libraries for error-source identification, surface-error fitting, and compensated tool-path generation, which were integrated into a production-oriented software system delivered for routine use by laboratory engineers."
+
+    Publications:
+      - title: "Coherence scanning interferometric measurement of advanced optics: A review"
+        url: https://doi.org/10.1016/j.optlastec.2026.115956
+        publisher: "Optics & Laser Technology, Volume 204, Part A, 115956, 2026"
+        releaseDate: 2026
+        summary: "**Guoyuan Lyu**, Qian Liu, Zexiao Li, Weisheng Cheng, Junge Xu, Xiaodong Zhang"
+
+      - title: "Key technologies of a FOUP-integrated spectral confocal module for wafer warpage measurement"
+        url: https://doi.org/10.1016/j.optlaseng.2026.109733
+        publisher: "Optics and Lasers in Engineering, Volume 201, 109733, 2026"
+        releaseDate: 2026
+        summary: "Weisheng Cheng, Shuangxiong Yin, Yongxu Xiang, **Guoyuan Lyu**, Jun Yang, Zexiao Li, Xiaodong Zhang"
+
+      - title: "Bionic-inspired intelligent detection of surface defects on semiconductor silicon wafers"
+        url: https://doi.org/10.1088/1361-6501/ae7aa3
+        publisher: "Measurement Science and Technology, Volume 37, 255204, 2026"
+        releaseDate: 2026
+        summary: "Weisheng Cheng, Zexiao Li, Juncheng Yu, Fuqi Sun, **Guoyuan Lyu** and Xiaodong Zhang"
+
+    Skills:
+      - name: Programming and development tools
+        keywords: "MATLAB, C++, CMake, C#, Python, Git"
+      - name: Simulation software
+        keywords: "Zemax OpticStudio, ZOS-API, VirtualLab Fusion"
+      - name: Experimental and engineering tools
+        keywords: "Ultra-precision diamond turning lathe, Optical profilometer (LUPHOScan), Coherence scanning interferometer, Laser interferometer, Confocal microscope, Industrial cameras, Motion platforms, Piezoelectric actuators"
+      - name: Technical writing
+        keywords: "Academic manuscripts (review articles and original research papers), Patent documents, Project reports, Research proposals and Academic presentations"
+
+    Languages:
+      - name: English
+        summary: "IELTS Academic 7.5 (Listening 8.0 | Reading 8.0 | Writing 7.0 | Speaking 6.5)"

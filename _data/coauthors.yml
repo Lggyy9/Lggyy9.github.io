@@ -1,0 +1,11 @@
+# Co-author links. When an author in papers.bib matches a key below (last name, lower-cased, without accents)
+# and one of its first names, the name is turned into a link to the given url. Format:
+#
+# "lastname":
+#   - firstname: ["First", "F.", "First Middle"]
+#     url: https://link-to-the-personal-page
+#
+# [TODO] The upstream demo entries (historical physicists) were removed so they cannot auto-link real co-authors
+# who happen to share a last name. The owner's co-authors are added after the papers are provided
+# (see _materials/03_publications/).
+{}

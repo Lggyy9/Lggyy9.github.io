@@ -1,0 +1,16 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+#
+# Values come from _materials/01_profile/profile_info.md. Never leave a key with an empty value:
+# an empty value still renders an icon, with a broken link.
+email: lggyy@tju.edu.cn
+scholar_userid: wE9eRJcAAAAJ
+orcid_id: 0009-0008-3879-4367
+#
+# Not shown on purpose (owner's decision): GitHub (will be added once there are repositories worth showing),
+# phone / WeChat ("Available upon request" appears on the CV page only).
+cv_pdf: /assets/pdf/CV.pdf # CV icon on the home page (remove this line to hide it)
+#
+# Many more keys are supported (dblp_url, semanticscholar_id, scopus_id, ieee_id, x_username, ...);
+# the full list is SOCIAL_ICONS in the jekyll-socials gem.
