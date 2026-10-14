@@ -1,7 +1,6 @@
-# CV data in RenderCV format; rendered by _pages/cv.md (layout: cv). This file is the source of the CV page; the owner's CV.md and the CV.pdf download follow it.
-# 2026-10-14: unified with the project pages (the owner's latest project summaries win): titles, project types and dates are those of the project pages, and the
-# bullets follow them. The thesis project shows only its basic info (title, type, dates), like its project page.
-# Fixes approved by the owner: "RMSby" -> "RMS by", a missing comma after "Lab-Initiated Research Project", and "M.Eng" -> "M.Eng.".
+# CV data in RenderCV format; rendered by _pages/cv.md (layout: cv). This file is the source of the CV page; the CV.pdf download follows it.
+# Titles, project types and dates are those of the project pages (_projects/), and the bullets follow them.
+# The thesis project shows only its basic info (title, type, dates), like its project page.
 # Notes on the template: the card titles "Contact Information", "Professional Summary", "Experience" and "Languages" are fixed by the
 # template, and the Experience card always comes first and is sorted by end date (newest first).
 # The web page tolerates missing dates; before the render-cv GitHub workflow (PDF generation) is ever enabled,

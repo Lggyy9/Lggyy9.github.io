@@ -7,7 +7,7 @@ importance: 1
 related_publications: true
 ---
 
-{% comment %} Source: the owner's project summary (info.md); wording approved by the owner on 2026-10-14. This is a Liquid comment: it is dropped at build time (an HTML comment would show up in the published page source). {% endcomment %}
+{% comment %} Notes for editors: this is a Liquid comment, so it is dropped at build time (an HTML comment would show up in the published page source). {% endcomment %}
 
 <div class="row">
     <div class="col-12">

@@ -6,7 +6,7 @@ img: assets/img/projects/biconic-turning-cover.png
 importance: 2
 ---
 
-{% comment %} Source: the owner's project summary (info.md); wording approved by the owner on 2026-10-14. The project has no paper, so there is no related_publications / cite. This is a Liquid comment: it is dropped at build time (an HTML comment would show up in the published page source). {% endcomment %}
+{% comment %} Notes for editors: the project has no paper, so there is no related_publications / cite. This is a Liquid comment, so it is dropped at build time (an HTML comment would show up in the published page source). {% endcomment %}
 
 <div class="row">
     <div class="col-12">

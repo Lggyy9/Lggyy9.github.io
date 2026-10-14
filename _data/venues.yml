@@ -5,7 +5,7 @@
 #   url: https://link-to-the-venue # optional
 #   color: "#rrggbb" # optional
 #
-# Abbreviations come from _materials/03_publications/publication_notes.md. Colours are a design choice (template palette).
+# Colours are a design choice (template palette).
 "OLT": # Optics & Laser Technology
   color: "#00369f"
 

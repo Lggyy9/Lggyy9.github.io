@@ -4,7 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/CV.pdf # PDF download button next to the page title (compiled from CV.md, see CLAUDE.md)
+cv_pdf: /assets/pdf/CV.pdf # PDF download button next to the page title (the PDF follows the data in _data/cv.yml)
 cv_format: rendercv # options: rendercv, jsonresume
 # description: # optional one-line description shown under the page title (none for now)
 toc:

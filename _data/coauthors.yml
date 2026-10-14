@@ -5,7 +5,6 @@
 #   - firstname: ["First", "F.", "First Middle"]
 #     url: https://link-to-the-personal-page
 #
-# [TODO] The upstream demo entries (historical physicists) were removed so they cannot auto-link real co-authors
-# who happen to share a last name. The owner's co-authors are added after the papers are provided
-# (see _materials/03_publications/).
+# The upstream demo entries (historical physicists) were removed so that they cannot auto-link real co-authors
+# who happen to share a last name. Add the site owner's co-authors here to link their names.
 {}

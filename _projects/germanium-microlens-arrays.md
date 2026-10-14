@@ -6,10 +6,8 @@ importance: 4
 ---
 
 {% comment %}
-  Stub (owner's decision, 2026-10-14): only the basic info is public for now (participation time and project type/source, taken from the CV entry, shown in the
-  description) plus one sentence, and the same at the first release.
-  The sentence below is the owner's content (he asked for "the project is in progress"); the English wording is Claude's.
-  PENDING-APPROVAL: the English wording of that sentence.
+  Stub: only the basic info is public for now (participation time and project type/source, shown in the description) plus one sentence.
+  Keep this slug when the full page replaces the stub, so the URL stays the same.
 {% endcomment %}
 
 This project is currently in progress.
