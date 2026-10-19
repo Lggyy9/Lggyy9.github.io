@@ -1,0 +1,26 @@
+{%- comment -%}
+  Language switch for the navbar (site-specific include, no upstream counterpart).
+  English lives at /, Chinese at /zh/. The link goes to the same page in the other language when that page exists,
+  otherwise to the other language's home page. Expects `cur_lang` to be set by the caller (_includes/header.liquid).
+{%- endcomment -%}
+{%- assign zh_home = site.pages | where: 'url', '/zh/' | first -%}
+{%- if zh_home -%}
+{%- if cur_lang == 'zh-CN' -%}
+  {%- assign alt_lang = 'en' -%}
+  {%- assign alt_home = '/' -%}
+  {%- assign alt_url = page.url | remove_first: '/zh' -%}
+{%- else -%}
+  {%- assign alt_lang = 'zh-CN' -%}
+  {%- assign alt_home = '/zh/' -%}
+  {%- assign alt_url = page.url | prepend: '/zh' -%}
+{%- endif -%}
+{%- assign alt_candidates = site.pages | concat: site.projects | concat: site.projects_zh -%}
+{%- assign alt_hit = alt_candidates | where: 'url', alt_url | first -%}
+{%- unless alt_hit -%}
+  {%- assign alt_url = alt_home -%}
+{%- endunless -%}
+{%- assign cur_strings = site.data.i18n[cur_lang] -%}
+<li class="nav-item lang-switch">
+  <a class="nav-link" href="{{ alt_url | relative_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}" title="{{ cur_strings.switch_title }}">{{ cur_strings.switch_label }}</a>
+</li>
+{%- endif -%}

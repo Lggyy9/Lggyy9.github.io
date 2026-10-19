@@ -1,0 +1,77 @@
+{% comment %}
+  Chinese CV renderer (site-specific, new file). Same card layout as al_folio_cv's cv/render.liquid (RenderCV branch only),
+  but the card titles and field labels come from _data/i18n.yml and the data from _data/cv_zh.yml. Experience/Education use local copies
+  (the gem hard-codes "Present"); Publications/Skills/Languages reuse the gem's own includes unchanged.
+{% endcomment %}
+{% assign t = site.data.i18n['zh-CN'] %}
+{% assign cv = site.data.cv_zh.cv %}
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+      {% if page.cv_pdf %}
+        <a href="{{ page.cv_pdf | relative_url }}" target="_blank" rel="noopener noreferrer" class="float-right"><i class="fa-solid fa-file-pdf"></i></a>
+      {% endif %}
+    </h1>
+    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+  </header>
+
+  <article>
+    <div class="cv">
+      <div class="card mt-3 p-3">
+        <h3 class="card-title font-weight-medium">{{ t.cv.contact }}</h3>
+        <table class="table table-cv table-sm table-borderless">
+          <tr><td class="p-1 pr-2 font-weight-bold"><b>{{ t.cv.name }}</b></td><td class="p-1 pl-2 font-weight-light">{{ cv.name }}</td></tr>
+          <tr><td class="p-1 pr-2 font-weight-bold"><b>{{ t.cv.email }}</b></td><td class="p-1 pl-2 font-weight-light">{{ cv.email }}</td></tr>
+          <tr><td class="p-1 pr-2 font-weight-bold"><b>{{ t.cv.phone }}</b></td><td class="p-1 pl-2 font-weight-light">{{ cv.phone }}</td></tr>
+          <tr><td class="p-1 pr-2 font-weight-bold"><b>{{ t.cv.location }}</b></td><td class="p-1 pl-2 font-weight-light">{{ cv.address.city }}, {{ cv.address.region }}</td></tr>
+        </table>
+      </div>
+
+      {% if cv.summary %}
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ t.cv.summary }}</h3>
+          <p>{{ cv.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        </div>
+      {% endif %}
+
+      {% assign experience_entries = cv.sections.Experience | al_cv_sort_by_date %}
+      {% if experience_entries.size > 0 %}
+        <a class="anchor" id="experience"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ t.cv.experience }}</h3>
+          <div>
+            {% assign entries = experience_entries %}
+            {% include cv_zh/experience.liquid %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% for section_pair in cv.sections %}
+        {% assign section_key = section_pair[0] %}
+        {% if section_key == 'Experience' %}{% continue %}{% endif %}
+        {% assign section_id = section_key | downcase %}
+        {% assign section_title = t.cv[section_id] | default: section_key %}
+        <a class="anchor" id="{{ section_key | slugify }}"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ section_title }}</h3>
+          <div>
+            {% if section_key == 'Education' %}
+              {% assign entries = section_pair[1] | al_cv_sort_by_date %}
+              {% include cv_zh/education.liquid %}
+            {% elsif section_key == 'Publications' %}
+              {% assign entries = section_pair[1] %}
+              {% include cv/publications.liquid %}
+            {% elsif section_key == 'Skills' %}
+              {% assign entries = section_pair[1] %}
+              {% include cv/skills.liquid %}
+            {% elsif section_key == 'Languages' %}
+              {% assign entries = section_pair[1] %}
+              {% include cv/languages.liquid %}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </article>
+</div>

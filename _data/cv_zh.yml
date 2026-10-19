@@ -1,0 +1,98 @@
+# Chinese CV data (RenderCV shape, same structure as cv.yml).
+cv:
+  name: 吕国源
+  email: lggyy@tju.edu.cn
+  phone: 可应要求提供
+  address:
+    city: 天津
+    region: 中国
+  summary: "我此前的工作聚焦于超精密光学制造中基于测量的误差诊断与闭环补偿。我希望将这一框架推广到先进制造与智能检测领域，融合原位测量、物理过程建模、自适应控制以及智能体驱动的工程自动化。"
+
+  sections:
+    Education:
+      - institution: 天津大学
+        area: 仪器科学与技术
+        studyType: 学术型硕士研究生
+        location: 中国天津
+        start_date: 2025-09
+        highlights:
+          - "预计毕业时间：2028年6月"
+          - "推荐免试攻读硕士学位研究生"
+          - "导师：张效栋教授"
+
+      - institution: 天津大学
+        area: 测控技术与仪器
+        studyType: 工学学士
+        location: 中国天津
+        start_date: 2021-09
+        end_date: 2025-06
+        highlights:
+          - "GPA：3.73 / 4.0"
+
+    Experience:
+      - position: "脆性材料阵列型光学元件高一致性超精密车削方法研究"
+        company: "硕士学位论文课题 | 纵向项目，2025年9月 – 至今"
+        start_date: 2025-09
+
+      - position: "面向光学轮廓测量的白光干涉测头设计与开发"
+        company: "横向项目，2024年11月 – 2025年11月"
+        start_date: 2024-11
+        end_date: 2025-11
+        highlights:
+          - "开发了用于仪器控制与软件集成的动态链接库，涵盖图像采集、扫描控制、形貌重建、数据再处理和表面粗糙度评价。"
+          - "将算法与软件部分同测头硬件集成并开展实操测试，为光学轮廓仪成功交付功能完整的白光干涉测头做出贡献。"
+          - "参与了紧凑型白光干涉测头的元器件选型（宽光谱点光源、压电陶瓷位移器、干涉物镜和工业相机采集），工作基于实验室前期的硬件研发基础。"
+          - "独立设计并开展了微球辅助白光干涉的探索性实验，以提升横向分辨率，并指出了微球操控、实验稳定性和正向模型验证方面的局限。"
+
+      - position: "光学性能引导的共体多反系统闭环补偿制造"
+        company: "实验室内部项目，2025年12月 – 2026年8月"
+        start_date: 2025-12
+        end_date: 2026-08
+        highlights:
+          - "主导了由单点金刚石车削加工的共体双反射镜光学系统闭环补偿流程的实验实施与测量。"
+          - "开发并运行了基于Zemax ZOS-API的工作流，仿真实测面形误差的传播，并从系统级光学性能角度评估候选补偿策略。"
+          - "处理并分析了加工、面形测量和光学性能数据，以评估补偿方法的有效性。补偿迭代后将系统波前误差RMS降低90%，通过实验验证了光学性能引导补偿框架的有效性。"
+          - "整合仿真与实验结果，并主导了由此形成的共同第一作者论文稿件的撰写。"
+
+      - position: "大口径双锥面镜的补偿式单点金刚石车削"
+        company: "面向产业的工程项目，2026年4月 – 2026年7月"
+        start_date: 2026-04
+        end_date: 2026-07
+        highlights:
+          - "主导了双锥面光学元件生产加工中系统性面形误差的诊断，并制定了相应的补偿策略。"
+          - "针对不同误差形态，开发了特征化的面形误差拟合算法，以较低的拟合残差准确表达实测面形误差。"
+          - "为不同设计参数的双锥面生成补偿后的刀具路径，并支持其在超精密金刚石车削生产中的实施。"
+          - "开发了误差源识别、面形误差拟合和补偿刀具路径生成的核心动态链接库，并集成到面向生产的软件系统中，交付实验室工程师日常使用。"
+
+    Publications:
+      - title: "Coherence scanning interferometric measurement of advanced optics: A review"
+        url: https://doi.org/10.1016/j.optlastec.2026.115956
+        publisher: "Optics & Laser Technology, Volume 204, Part A, 115956, 2026"
+        releaseDate: 2026
+        summary: "**Guoyuan Lyu**, Qian Liu, Zexiao Li, Weisheng Cheng, Junge Xu, Xiaodong Zhang"
+
+      - title: "Key technologies of a FOUP-integrated spectral confocal module for wafer warpage measurement"
+        url: https://doi.org/10.1016/j.optlaseng.2026.109733
+        publisher: "Optics and Lasers in Engineering, Volume 201, 109733, 2026"
+        releaseDate: 2026
+        summary: "Weisheng Cheng, Shuangxiong Yin, Yongxu Xiang, **Guoyuan Lyu**, Jun Yang, Zexiao Li, Xiaodong Zhang"
+
+      - title: "Bionic-inspired intelligent detection of surface defects on semiconductor silicon wafers"
+        url: https://doi.org/10.1088/1361-6501/ae7aa3
+        publisher: "Measurement Science and Technology, Volume 37, 255204, 2026"
+        releaseDate: 2026
+        summary: "Weisheng Cheng, Zexiao Li, Juncheng Yu, Fuqi Sun, **Guoyuan Lyu** and Xiaodong Zhang"
+
+    Skills:
+      - name: 编程与开发工具
+        keywords: "MATLAB, C++, CMake, C#, Python, Git"
+      - name: 仿真软件
+        keywords: "Zemax OpticStudio, ZOS-API, VirtualLab Fusion"
+      - name: 实验与工程工具
+        keywords: "超精密金刚石车床, 光学轮廓仪（LUPHOScan）, 白光干涉仪, 激光干涉仪, 共聚焦显微镜, 工业相机, 运动平台, 压电陶瓷位移器"
+      - name: 技术写作
+        keywords: "学术论文（综述与研究论文）, 专利文书, 项目报告, 研究计划书和学术报告"
+
+    Languages:
+      - name: 英语
+        summary: "雅思学术类 7.5（听力 8.0 | 阅读 8.0 | 写作 7.0 | 口语 6.5）"

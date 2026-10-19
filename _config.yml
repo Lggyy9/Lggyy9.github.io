@@ -194,6 +194,9 @@ collections:
     output: true
   projects:
     output: true
+  projects_zh: # Chinese project pages, published under /zh/projects/
+    output: true
+    permalink: /zh/projects/:name/
   teachings:
     output: true
 
@@ -336,6 +339,17 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # Chinese pages: <html lang> comes from al_rtl reading the page's `lang`; the header/footer/switch includes read it too.
+  - scope:
+      path: "_pages/zh"
+    values:
+      lang: zh-CN
+  - scope:
+      path: ""
+      type: projects_zh
+    values:
+      lang: zh-CN
+      layout: page
 
 sass:
   style: compressed
@@ -580,7 +594,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "/assets/css/fonts-local.css" # self-hosted Roboto (was the Google Fonts stylesheet); baseurl is empty, so the root-relative path is fine
   highlightjs:
     integrity:
       css:

@@ -1,0 +1,58 @@
+---
+layout: default
+---
+{% comment %}
+  Chinese home layout (site-specific, new file: it has no upstream counterpart, so upgrades never conflict with it).
+  Copy of al_folio_core's `about` layout with the English heading strings and links replaced from _data/i18n.yml.
+  Dropped on purpose: news / latest posts / newsletter blocks (all disabled on this site).
+{% endcomment %}
+{% assign t = site.data.i18n['zh-CN'] %}
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      <span class="font-weight-bold">{{ t.brand }}</span>
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+          {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix">{{ content }}</div>
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/zh/publications/' | relative_url }}" style="color: inherit">{{ t.selected_publications }}</a>
+      </h2>
+      <div class="publications">
+        {% bibliography --group_by none --query @*[selected=true]* --template bib_zh %}
+      </div>
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+  </article>
+</div>

@@ -1,0 +1,38 @@
+---
+layout: null
+---
+{%- comment -%}
+  Site-level replacement of jekyll-sitemap's template (the plugin skips its own when a sitemap.xml exists).
+  Same URL set as the plugin's, plus hreflang alternates (xhtml:link) for every page that exists in both languages.
+  English lives at /..., Chinese at /zh/...; a page without a counterpart gets no alternates.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign collections = site.collections | where_exp: 'collection', 'collection.output != false' -%}
+{%- assign all_docs = '' | split: '' -%}
+{%- for collection in collections -%}
+  {%- assign cdocs = collection.docs | where_exp: 'doc', 'doc.sitemap != false' -%}
+  {%- assign all_docs = all_docs | concat: cdocs -%}
+{%- endfor -%}
+{%- assign html_pages = site.html_pages | where_exp: 'doc', 'doc.sitemap != false' | where_exp: 'doc', 'doc.url != "/404.html"' -%}
+{%- assign entries = html_pages | concat: all_docs -%}
+{%- assign entry_urls = entries | map: 'url' -%}
+{%- for e in entries -%}
+  {%- assign loc = e.url | replace: '/index.html', '/' -%}
+  {%- if e.lang == 'zh-CN' -%}
+    {%- assign zh_loc = loc -%}
+    {%- assign en_loc = loc | remove_first: '/zh' -%}
+  {%- else -%}
+    {%- assign en_loc = loc -%}
+    {%- assign zh_loc = loc | prepend: '/zh' -%}
+  {%- endif %}
+  <url>
+    <loc>{{ loc | absolute_url | xml_escape }}</loc>
+    {%- if entry_urls contains en_loc and entry_urls contains zh_loc %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en_loc | absolute_url | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ zh_loc | absolute_url | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_loc | absolute_url | xml_escape }}"/>
+    {%- endif %}
+  </url>
+{%- endfor %}
+</urlset>

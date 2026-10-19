@@ -1,0 +1,173 @@
+{%- comment -%}
+  SITE OVERRIDE of al_folio_core _includes/header.liquid (zh spike). Differences from upstream, all marked "zh:":
+  language context, brand + home link, nav items filtered by language, language switch item. English output is unchanged.
+{%- endcomment -%}
+{%- assign cur_lang = page.lang | default: site.lang -%} {%- comment -%} zh: current page language {%- endcomment -%}
+{%- if cur_lang == 'zh-CN' -%}
+  {%- assign home_permalink = '/zh/' -%}
+{%- else -%}
+  {%- assign home_permalink = '/' -%}
+{%- endif -%}
+{%- assign t_nav = site.data.i18n[cur_lang] -%}
+{%- if cur_lang == 'zh-CN' -%}
+<style>
+  /* zh: CJK font stack (system fonts; no download). Latin text keeps Roboto when it is available. */
+  html:lang(zh-CN) body, html:lang(zh-CN) p, html:lang(zh-CN) li, html:lang(zh-CN) h1, html:lang(zh-CN) h2, html:lang(zh-CN) h3, html:lang(zh-CN) h4, html:lang(zh-CN) h5, html:lang(zh-CN) h6, html:lang(zh-CN) td, html:lang(zh-CN) a, html:lang(zh-CN) span, html:lang(zh-CN) div {
+    font-family: Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  }
+  html:lang(zh-CN) .post p, html:lang(zh-CN) .post li { line-height: 1.75; }
+</style>
+{%- endif -%}
+<header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+    <div class="container">
+      {% if page.permalink != home_permalink %}
+        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}{{ home_permalink }}">
+          {% if cur_lang == 'zh-CN' and site.data.i18n['zh-CN'].brand %}
+            <span class="font-weight-bold">{{- site.data.i18n['zh-CN'].brand -}}</span>
+          {% elsif site.title == 'blank' %}
+            {% if site.first_name %}
+              <span class="font-weight-bold">
+                {{- site.first_name -}}
+              </span>
+            {% endif %}
+            {% if site.middle_name %}
+              {{- site.middle_name -}}
+            {% endif %}
+            {% if site.last_name %}
+              {{- site.last_name -}}
+            {% endif %}
+          {% else %}
+            {{- site.title -}}
+          {% endif %}
+        </a>
+      {% elsif site.enable_navbar_social %}
+        <!-- Social Icons -->
+        <div class="navbar-brand social">{% social_links %}</div>
+      {% endif %}
+      <!-- Navbar Toggle -->
+      <button
+        class="navbar-toggler collapsed navbar-toggler-main"
+        type="button"
+        data-nav-toggle="navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="{{ t_nav.toggle_nav | default: 'Toggle navigation' }}"
+      >
+        <span class="sr-only">{{ t_nav.toggle_nav | default: 'Toggle navigation' }}</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-nav navbar-menu-list flex-nowrap">
+          {% for page in site.pages %}
+            {% if page.permalink == home_permalink %} {% assign about_title = page.title %} {% endif %}
+          {% endfor %}
+
+          <!-- About -->
+          <li class="nav-item {% if page.permalink == home_permalink %}active{% endif %}">
+            <a class="nav-link" href="{{ home_permalink | relative_url }}">
+              {{- about_title }}
+              {% if page.permalink == home_permalink %}
+                <span class="sr-only">({{ t_nav.current | default: 'current' }})</span>
+              {% endif %}
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% for p in sorted_pages %}
+            {% assign p_lang = p.lang | default: site.lang %} {% comment %} zh: only list pages of the current language {% endcomment %}
+            {% if p.nav and p.autogen == null and p_lang == cur_lang %}
+              {% if p.dropdown %}
+                {% assign has_active_child = false %}
+                {% for child in p.children %}
+                  {% if page.title == child.title %}
+                    {% assign has_active_child = true %}
+                  {% endif %}
+                {% endfor %}
+                <li class="nav-item dropdown {% if page.title == p.title or has_active_child %}active{% endif %}">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-nav-dropdown-toggle="true"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{- p.title }}
+                    {% if page.title == p.title or has_active_child %}
+                      <span class="sr-only">({{ t_nav.current | default: 'current' }})</span>
+                    {% endif %}
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    {% for child in p.children %}
+                      {% if child.title == 'divider' %}
+                        <div class="dropdown-divider"></div>
+                      {% else %}
+                        <a
+                          class="dropdown-item {% if page.title == child.title %}active{% endif %}"
+                          href="{% if child.permalink contains '://' %}{{ child.permalink }}{% else %}{{ child.permalink | relative_url }}{% endif %}"
+                        >
+                          {{- child.title -}}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </li>
+              {% else %}
+                {% assign parent_link = p.permalink | remove: 'index.html' %}
+                <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
+                  {%- if p.permalink contains '://' -%}
+                    {%- assign url = p.permalink -%}
+                  {%- elsif p.permalink contains '/blog/' -%}
+                    {%- assign url = '/blog/' -%}
+                  {%- else -%}
+                    {%- assign url = p.url -%}
+                  {%- endif %}
+                  <a class="nav-link" href="{{ url | relative_url }}">
+                    {{- p.title }}
+                    {% if page.url contains p.url %}
+                      <span class="sr-only">({{ t_nav.current | default: 'current' }})</span>
+                    {% endif %}
+                  </a>
+                </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          {% include lang_switch.liquid %} {% comment %} zh: language switch {% endcomment %}
+          {% if site.search_enabled %}
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" type="button" title="Search" aria-label="Open search">
+                <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span>
+              </button>
+            </li>
+          {% endif %}
+          {% if site.enable_darkmode %}
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" type="button" title="{{ t_nav.theme | default: 'Change theme' }}" aria-label="{{ t_nav.theme_aria | default: 'Change color theme' }}">
+                <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+                <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+                <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% if site.enable_progressbar %}
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  {% endif %}
+</header>

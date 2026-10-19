@@ -1,0 +1,36 @@
+# Interface strings per language. English pages keep the theme's own English strings; only the zh-CN column is read by the zh layouts/includes.
+en:
+  switch_label: 中文
+  switch_title: Chinese version
+zh-CN:
+  brand: 吕国源
+  switch_label: English
+  switch_title: English version
+  home: 首页
+  selected_publications: 精选论文
+  all_publications: 全部论文
+  references: 相关论文
+  filter_placeholder: 输入关键词筛选
+  present: 至今
+  toggle_nav: 切换导航
+  current: 当前页
+  theme: 切换主题
+  theme_aria: 切换颜色主题
+  footer_text: >
+    由 Jekyll 和 al-folio 主题驱动，托管于 GitHub Pages。
+  bib:
+    abs: 摘要
+    bib: BibTeX
+    html: 出版社页面
+  cv:
+    contact: 联系方式
+    name: 姓名
+    email: 邮箱
+    phone: 电话/微信
+    location: 所在地
+    summary: 研究方向
+    experience: 项目经历
+    education: 教育背景
+    publications: 论文
+    skills: 工程技能
+    languages: 语言
