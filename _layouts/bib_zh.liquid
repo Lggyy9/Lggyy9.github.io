@@ -194,7 +194,7 @@
       {{ periodical | strip }}
     </div>
     <div class="periodical">
-      {{ entry.note | strip }}
+      {% if entry.note != blank %}{{ site.data.i18n['zh-CN'].co_first_authors }}{% endif %}
     </div>
 
     <!-- Links/Buttons -->

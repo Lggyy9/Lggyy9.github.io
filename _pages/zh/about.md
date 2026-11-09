@@ -23,6 +23,6 @@ social: true
 
 我此前的工作聚焦于超精密光学制造中基于测量的误差诊断与闭环补偿。我希望将这一框架推广到先进制造与智能检测领域，融合原位测量、物理过程建模、自适应控制以及智能体驱动的工程自动化。
 
-我的项目涵盖单晶锗微透镜阵列的超精密金刚石车削、白光干涉测量，以及光学性能引导的闭环补偿制造。我是综述论文 *Coherence scanning interferometric measurement of advanced optics: A review*（Optics & Laser Technology，2026）的第一作者，并作为共同作者参与了另外两篇晶圆测量与检测方面的论文。
+我的项目涵盖单晶锗微透镜阵列的超精密金刚石车削、白光干涉测量，以及光学性能引导的闭环补偿制造。我是综述论文 *Coherence scanning interferometric measurement of advanced optics: A review*（Optics & Laser Technology，2026）的第一作者，是一篇关于光学性能引导闭环补偿制造的论文（Journal of Manufacturing Processes，2026）的共同第一作者，并作为共同作者参与了另外两篇晶圆测量与检测方面的论文。
 
 **研究兴趣：** 超精密光学制造 · 单点金刚石车削 · 基于测量的误差诊断与补偿 · 白光干涉测量 · 原位测量与智能检测 · 自适应控制与智能体驱动的工程自动化

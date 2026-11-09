@@ -3,7 +3,7 @@ layout: page
 title: "Compensation Single-Point Diamond Turning of Large Aperture Biconic Optical Surfaces"
 description: "For the fabrication of high-precision, large-aperture biconic mirrors, the machined surface is measured with a LUPHOScan, the machining error is calculated from the measurement results, and algorithms were developed to generate a new, compensated tool path that improves surface accuracy."
 img: assets/img/projects/biconic-turning-cover.png
-importance: 2
+importance: 3
 ---
 
 {% comment %} Notes for editors: the project has no paper, so there is no related_publications / cite. This is a Liquid comment, so it is dropped at build time (an HTML comment would show up in the published page source). {% endcomment %}

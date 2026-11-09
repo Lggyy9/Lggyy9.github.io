@@ -59,7 +59,7 @@ cv:
           - "Led the experimental implementation and metrology of a closed-loop compensation process for a monolithic dual-reflector optical system manufactured by single-point diamond turning."
           - "Developed and executed a Zemax ZOS-API workflow to simulate the propagation of measured surface errors and evaluate candidate compensation strategies in terms of system-level optical performance."
           - "Processed and analyzed machining, surface-metrology, and optical-performance data to evaluate the effectiveness of the compensation method. Reduced the system wavefront error RMS by 90% after compensation iteration, experimentally validating the effectiveness of the optical-performance-guided compensation framework."
-          - "Consolidated the simulation and experimental results and led the preparation of the resulting co-first-author manuscript."
+          - "Consolidated the simulation and experimental results and led the preparation of the resulting co-first-author paper."
 
       - position: "Compensation Single-Point Diamond Turning of Large Aperture Biconic Optical Surfaces"
         company: "Industry-Facing Engineering Project, Apr. 2026 – Jul. 2026"
@@ -72,6 +72,12 @@ cv:
           - "Developed the core dynamic-link libraries for error-source identification, surface-error fitting, and compensated tool-path generation, which were integrated into a production-oriented software system delivered for routine use by laboratory engineers."
 
     Publications:
+      - title: "A closed-loop compensatory manufacturing process for monolithic multi-mirror systems guided by optical performance"
+        url: https://doi.org/10.1016/j.jmapro.2026.10.055
+        publisher: "Journal of Manufacturing Processes, Volume 179, 373–388, 2026"
+        releaseDate: 2026
+        summary: "Lei Liu\\*, **Guoyuan Lyu**\\*, Zexiao Li, Fengzhou Fang, Xiaodong Zhang (\\*co-first authors)"
+
       - title: "Coherence scanning interferometric measurement of advanced optics: A review"
         url: https://doi.org/10.1016/j.optlastec.2026.115956
         publisher: "Optics & Laser Technology, Volume 204, Part A, 115956, 2026"

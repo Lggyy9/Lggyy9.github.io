@@ -3,7 +3,7 @@ layout: page
 title: "面向光学轮廓测量的白光干涉测头设计与开发"
 description: "面向光学轮廓仪，开发紧凑（compact）型的白光干涉测头，负责算法开发、软件集成与实操测试。"
 img: assets/img/projects/csi-probe-cover.png
-importance: 1
+importance: 2
 ---
 
 

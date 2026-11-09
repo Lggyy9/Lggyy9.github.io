@@ -3,7 +3,7 @@ layout: page
 title: "Development of a Coherence Scanning Interferometry Probe for Optical Profilometry"
 description: "Contributed to the development of a compact coherence scanning interferometry probe for an optical profilometer, responsible for algorithm development, software integration, and hands-on testing."
 img: assets/img/projects/csi-probe-cover.png
-importance: 1
+importance: 2
 related_publications: true
 ---
 

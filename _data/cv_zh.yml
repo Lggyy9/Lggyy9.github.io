@@ -52,7 +52,7 @@ cv:
           - "主导了由单点金刚石车削加工的共体双反射镜光学系统闭环补偿流程的实验实施与测量。"
           - "开发并运行了基于Zemax ZOS-API的工作流，仿真实测面形误差的传播，并从系统级光学性能角度评估候选补偿策略。"
           - "处理并分析了加工、面形测量和光学性能数据，以评估补偿方法的有效性。补偿迭代后将系统波前误差RMS降低90%，通过实验验证了光学性能引导补偿框架的有效性。"
-          - "整合仿真与实验结果，并主导了由此形成的共同第一作者论文稿件的撰写。"
+          - "整合仿真与实验结果，并主导了由此形成的共同第一作者论文的撰写。"
 
       - position: "大口径双锥面镜的补偿式单点金刚石车削"
         company: "面向产业的工程项目，2026年4月 – 2026年7月"
@@ -65,6 +65,12 @@ cv:
           - "开发了误差源识别、面形误差拟合和补偿刀具路径生成的核心动态链接库，并集成到面向生产的软件系统中，交付实验室工程师日常使用。"
 
     Publications:
+      - title: "A closed-loop compensatory manufacturing process for monolithic multi-mirror systems guided by optical performance"
+        url: https://doi.org/10.1016/j.jmapro.2026.10.055
+        publisher: "Journal of Manufacturing Processes, Volume 179, 373–388, 2026"
+        releaseDate: 2026
+        summary: "Lei Liu\\*, **Guoyuan Lyu**\\*, Zexiao Li, Fengzhou Fang, Xiaodong Zhang（\\*共同第一作者）"
+
       - title: "Coherence scanning interferometric measurement of advanced optics: A review"
         url: https://doi.org/10.1016/j.optlastec.2026.115956
         publisher: "Optics & Laser Technology, Volume 204, Part A, 115956, 2026"

@@ -10,6 +10,7 @@ zh-CN:
   selected_publications: 精选论文
   all_publications: 全部论文
   references: 相关论文
+  co_first_authors: "* 共同第一作者"
   filter_placeholder: 输入关键词筛选
   present: 至今
   toggle_nav: 切换导航

@@ -3,7 +3,7 @@ layout: page
 title: "大口径双锥面镜的补偿式单点金刚石车削"
 description: "面向高精度大口径双锥面镜制造，采用LUPHOScan对加工后表面进行测量，根据测量结果计算加工误差，开发算法生成新的补偿后的刀具路径，提高表面加工精度。"
 img: assets/img/projects/biconic-turning-cover.png
-importance: 2
+importance: 3
 ---
 
 
